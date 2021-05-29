@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: "Days One", sans-serif;
+  background: white;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar h1 {
+  font-family: "Nosifer", cursive;
+  color: red;
+}
+
+.navbar .computer-nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .computer-nav-links {
+    display: none;
+  }
+}
+
+.menu-bars,
+.nav-icons {
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-icons:hover {
+  cursor: pointer;
+}
+
+.menu-bars {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .menu-bars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.side-menu {
+  background-color: #680211;
+  width: 250px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  -webkit-transition: 850ms;
+  transition: 850ms;
+}
+
+.side-menu.active {
+  left: 0;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+}
+
+.sidebar-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.sidebar-text a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.sidebar-text a:hover {
+  background-color: red;
+  color: white;
+}
+
+.side-menu-items {
+  width: 100%;
+}
+
+.sidebar-toggle {
+  background-color: #680211;
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+.saved-items-container {
+  position: relative;
+  z-index: 1;
+}
+
+.saved-items-container:hover .saved-items {
+  display: block;
+}
+
+.saved-items-container h1 {
+  color: black;
+  font-family: "Days One", sans-serif;
+  font-size: 0.7em;
+  background: red;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+}
+
+.saved-items-container .saved-items {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  width: 350px;
+  height: 50vh;
+  background: #e4e3e3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 20px #525252;
+          box-shadow: 0 4px 20px #525252;
+  display: none;
+  overflow-y: scroll;
+  font-size: 0.7em;
+}
+
+.saved-items-container .saved-items h1 {
+  font-size: 2em;
+}
+
+.saved-items-container .saved-items .image {
+  height: 100px;
+  width: 75px;
+  margin-right: 10px;
+}
+
+.saved-items-container .saved-items p {
+  width: 150px;
+  color: #7e7d7d;
+  font-size: 0.9em;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-items-container .saved-items ul {
+  padding: 20px;
+}
+
+.saved-items-container .saved-items li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+  width: 300px;
+  list-style: none;
+  border-bottom: red 2px solid;
+}
+
+.saved-items-container .saved-items li .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.saved-items-container .saved-items li .text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.saved-items-container .saved-items li .deleteIcon {
+  font-size: 2em;
+  margin-top: 50px;
+}
+
+.saved-items-container .saved-items li .deleteIcon:hover {
+  cursor: pointer;
+}
+
+.saved-items-container .saved-items .add-to-bag-button {
+  margin-top: 2%;
+  color: white;
+  background: #087186;
+  padding: 5px 5px;
+  width: 60%;
+  border: none;
+}
+
+.saved-items-container .saved-items .add-to-bag-button:hover {
+  cursor: pointer;
+  background: #066174;
+}
+
+.saved-items-container .empty-chest-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+}
+
+.saved-items-container .empty-chest-container h2 {
+  margin-bottom: 20px;
+}
+
+.saved-items-container .empty-chest {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 50px;
+}
+/*# sourceMappingURL=Navbar.css.map */

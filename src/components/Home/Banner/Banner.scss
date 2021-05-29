@@ -1,0 +1,71 @@
+.container-primary {
+  height: 50vh;
+  margin-top: 2em;
+  width: 90vw;
+  display: flex;
+  color: black;
+
+  @media (max-width: 991.98px) {
+    font-size: 0.7em;
+  }
+
+  @media (max-width: 768px) {
+    height: 30vh;
+    font-size: 0.6em;
+  }
+
+  .text-container {
+    width: 30%;
+    background: #12a6d3;
+    color: white;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+
+    @media (max-width: 768px) {
+      width: 40%;
+    }
+
+    & div:nth-child(1) {
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      background: red;
+      margin: 5px 0;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .shop-now-button {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    span {
+      background: red;
+      color: white;
+      font-family: "Days One", sans-serif;
+      padding: 1em 5em;
+      border: none;
+      border-radius: 40px;
+
+      @media (max-width: 790px) {
+        padding: 0.75em 3.75em;
+      }
+    }
+  }
+  .container-images {
+    width: 70%;
+    border-radius: 0 10px 10px 0;
+    background: url("../../../assets/banner.jpeg") no-repeat center;
+    background-size: cover;
+  }
+}

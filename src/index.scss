@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Days One", sans-serif;
+
+  p {
+    font-family: "Newsreader", serif;
+  }
+}

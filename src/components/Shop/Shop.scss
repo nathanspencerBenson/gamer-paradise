@@ -1,0 +1,9 @@
+.shop-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  > div {
+    margin: 20px;
+  }
+}

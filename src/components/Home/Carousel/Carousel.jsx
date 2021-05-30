@@ -9,16 +9,9 @@ import { commerce } from '../../../lib/commerce';
 import Product from '../../Product/Product';
 
 function Carousel({ title, products }) {
+  
 
-    console.log(products)
-
-
-    const carasouelDisplay = products.map((item, index) => {
-        return(
-            <Product item={item} index={index} />
-            
-        )
-    })
+    // const carasouelDisplay = <h1>hello</h1>;
 
     const responsive = {
         0: { items: 0 },
@@ -27,13 +20,21 @@ function Carousel({ title, products }) {
         1024: { items: 4 },
     };
     
+    if (products.length === 0) {
+        return <div className="carousel-container" style={{height: '400px'}}><h1>LOADING...</h1></div>
+      }
 
     return (
         <div>
             <div className="carousel-container">
             <h1>{title}</h1>
             <AliceCarousel mouseTracking controlsStrategy="responsive" autoHeight="auto"  responsive={responsive} className="featured-items-container">
-                {carasouelDisplay}
+                { products[0].productsData.map((item, index) => {
+                    return(
+            <Product item={item} index={index} />
+            
+        )
+    })}
             </AliceCarousel>
             </div>
         </div>

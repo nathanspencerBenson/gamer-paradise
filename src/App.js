@@ -9,6 +9,7 @@ import Shop from './components/Shop/Shop';
 function App() {
   const [ products, setProducts ] = useState([]);
   const [ categories, setCategories ] = useState([]);
+  const [ chosenCategory, setChosenCategory ] = useState([]);
   const [ cart, setCart ] = useState([]);
   const [ featured, setFeatured ] = useState([]);
 
@@ -17,6 +18,7 @@ function App() {
         // const { data } = await commerce.products.list();
         const { data: products } = await commerce.products.list();
         const { data: categoriesData } = await commerce.categories.list();
+
 
       const productsPerCategory = categoriesData.reduce((acc, category) => {
         return [
@@ -29,11 +31,21 @@ function App() {
         },
         ]; 
       }, []);
-        setProducts(productsPerCategory);
-        setCategories(categoriesData);
-        
-       
+        setProducts(shuffle(products));
+        setCategories(productsPerCategory); 
+        setChosenCategory(products)   
   }
+
+  function shuffle (arr) {
+    var j, x, index;
+    for (index = arr.length - 1; index > 0; index--) {
+        j = Math.floor(Math.random() * (index + 1));
+        x = arr[index];
+        arr[index] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
+}
 
   const fetchCart = async () => {
          setCart(await commerce.cart.retrieve());
@@ -54,10 +66,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact>
-            <Home featured={featured} products={products} />
+            <Home categories={categories} products={products} />
           </Route>
           <Route path="/shop" exact>
-            <Shop products={products} categories={categories}/>
+            <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products}/>
           </Route>
         </Switch>
 

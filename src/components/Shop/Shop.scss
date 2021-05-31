@@ -1,9 +1,39 @@
+@import "../../assets/variables.scss";
+
+.loading-container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
 .shop-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100vw;
 
-  > div {
-    margin: 20px;
+  .categories-container {
+    width: 20vw;
+    li {
+      list-style: none;
+      margin: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .products-title {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: $border-background-color 2px solid;
+    margin-bottom: 50px;
+
+    span {
+      color: $secondary-color;
+    }
+  }
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
   }
 }

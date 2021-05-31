@@ -6,13 +6,13 @@ import Banner from './Banner/Banner'
 import Carousel from './Carousel/Carousel';
 import BannerTwo from './BannerTwo/BannerTwo';
 
-const Home = ({ featured, products }) => {
+const Home = ({ categories, products }) => {
     return (
         <div className="Home">
             <Banner />
-            <Carousel title={"FEATURED"} products={products} />
+            <Carousel title={"FEATURED"} categories={categories} />
             <BannerTwo />
-            <Carousel title={"BEST SELLERS"} products={products} />
+            <Carousel title={"BEST SELLERS"} categories={categories} />
         </div>
     )
 }

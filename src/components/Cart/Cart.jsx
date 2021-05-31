@@ -14,6 +14,12 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
      };
  
      const FilledCart = () => {
+
+        if(cart.line_items.length === 0) {
+            return (
+                <h1>Your cart is empty</h1>
+            )
+        } else{
      return  (  <>
          <div>
              {cart.line_items.map((item) => (
@@ -31,7 +37,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
          </div>
          </>)
      };
-
+    }
      if(!cart.line_items) return <div><h1>Your Shopping Cart</h1>  <BeatLoader color={'red'} size={50} /></div>
     return (
         <div className="shopping-cart">

@@ -3,15 +3,29 @@
 .product-card {
   button {
     z-index: 10;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: $primary-color;
+    font-weight: bold;
+    width: 80%;
+    align-self: center;
+    padding: 5px 10px;
+    border-radius: 15px;
   }
   button:hover {
     cursor: pointer;
+    font-weight: bold;
+    background: rgb(150, 2, 2);
   }
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 450px;
+  height: 475px;
   width: 250px;
   overflow: hidden;
   background: white;
@@ -98,7 +112,7 @@
     text-align: center;
     width: 80%;
     position: absolute;
-    bottom: 20px;
+    bottom: 35px;
   }
 
   .description-container {

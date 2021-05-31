@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaEuroSign, FaRegHeart } from "react-icons/fa";
 import parse from 'html-react-parser';
 import './Product.scss';
+import * as HiIcons from 'react-icons/hi';
 
 const Product = ( {item, index, handleAddToCart} ) => {
     return (
@@ -28,7 +29,7 @@ const Product = ( {item, index, handleAddToCart} ) => {
                 <button onClick={() => {
                     handleAddToCart(item.id, 1);
                     console.log(item.id);
-                }}> add</button>
+                }}> <HiIcons.HiOutlineShoppingBag style={{ fontSize: '2em'}} />Add To Bag</button>
             </div>
     )
 }

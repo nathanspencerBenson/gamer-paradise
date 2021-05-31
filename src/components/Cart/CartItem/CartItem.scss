@@ -1,0 +1,73 @@
+@import "../../../assets/variables.scss";
+
+.CartItem {
+  display: flex;
+  justify-content: flex-start;
+  border-top: 2px solid $border-background-color;
+  padding: 20px 0;
+
+  h1 {
+    font-size: 1em;
+    margin: 10px;
+  }
+  h2 {
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .img {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttons {
+    display: flex;
+
+    > div {
+      display: flex;
+      justify-content: flex-start;
+      border: 2px solid red;
+      align-items: stretch;
+
+      button {
+        background: none;
+        border: none;
+        font-size: 1em;
+        padding: 5px 25px;
+
+        &:hover {
+          cursor: pointer;
+          background: $border-background-color;
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+      }
+    }
+
+    .remove-button {
+      background: $primary-color;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 5px 20px;
+
+      &:hover {
+        cursor: pointer;
+        background: rgb(150, 2, 2);
+      }
+    }
+  }
+}

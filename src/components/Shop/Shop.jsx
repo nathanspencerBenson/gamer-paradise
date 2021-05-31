@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Product from '../Product/Product';
 import './Shop.scss';
-import ClimbingBoxLoader from "react-spinners/BeatLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
-const Shop = ({ categories, chosenCategory, setChosenCategory, products }) => {
+const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart }) => {
 
     const [title, setTitle] = useState('All Products')
 
 
     if (categories.length === 0) return (
         <div className="loading-container">
-            <ClimbingBoxLoader color={'red'} size={50} />
+            <BeatLoader color={'red'} size={50} />
         </div>);
         else {
             
@@ -40,7 +40,7 @@ const Shop = ({ categories, chosenCategory, setChosenCategory, products }) => {
                 <div className="products-container">
                     {chosenCategory.map((item, index) => {
                         return (
-                            <Product item={item} index={index} />
+                            <Product item={item} index={index} handleAddToCart={handleAddToCart} />
                         )
 
                     })}

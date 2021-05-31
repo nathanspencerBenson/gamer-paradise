@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
+import Cart from './components/Cart/Cart';
 
 function App() {
   const [ products, setProducts ] = useState([]);
@@ -96,6 +97,14 @@ const handleEmptyCart = async () => {
           <Route path="/shop" exact>
             <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart}/>
           </Route>
+          <Route exact path="/cart">
+                    <Cart 
+                    cart={cart} 
+                    handleUpdateCartQty={handleUpdateCartQty}
+                    handleRemoveFromCart={handleRemoveFromCart}
+                    handleEmptyCart={handleEmptyCart}
+                    />
+                </Route>
         </Switch>
 
       </div>

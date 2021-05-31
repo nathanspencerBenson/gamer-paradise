@@ -47,7 +47,7 @@ function Navbar({ totalItems }) {
                     </ul>
                 </div>
                 </div>
-                <Link to="/shoppingcart" className="nav-icons">
+                <Link to="/cart" className="nav-icons">
                     <span className="basket-count">{totalItems}<HiIcons.HiOutlineShoppingBag style={{color: 'red'}} /></span>
                 </Link>
             </div>

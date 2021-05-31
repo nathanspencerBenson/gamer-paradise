@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Product from '../Product/Product';
 import './Shop.scss';
 import BeatLoader from "react-spinners/BeatLoader";
 
 const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart }) => {
 
-    const [title, setTitle] = useState('All Products')
+    const [title, setTitle] = useState()
 
+
+    useEffect(() => {
+        setTitle('All Products')
+        setChosenCategory(products)
+    }, [])
 
     if (categories.length === 0) return (
         <div className="loading-container">

@@ -6,13 +6,13 @@ import Banner from './Banner/Banner'
 import Carousel from './Carousel/Carousel';
 import BannerTwo from './BannerTwo/BannerTwo';
 
-const Home = ({ categories, products }) => {
+const Home = ({ categories,handleAddToCart }) => {
     return (
         <div className="Home">
             <Banner />
-            <Carousel title={"FEATURED"} categories={categories} />
+            <Carousel title={"FEATURED"} categories={categories} handleAddToCart={handleAddToCart} />
             <BannerTwo />
-            <Carousel title={"BEST SELLERS"} categories={categories} />
+            <Carousel title={"BEST SELLERS"} categories={categories} handleAddToCart={handleAddToCart} />
         </div>
     )
 }

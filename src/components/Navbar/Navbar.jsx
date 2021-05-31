@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons';
 import emptyChest from "../../assets/empty-chest.png";
 
 
-function Navbar() {
+function Navbar({ totalItems }) {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
 
@@ -48,7 +48,7 @@ function Navbar() {
                 </div>
                 </div>
                 <Link to="/shoppingcart" className="nav-icons">
-                    <span className="basket-count">4<HiIcons.HiOutlineShoppingBag style={{color: 'red'}} /></span>
+                    <span className="basket-count">{totalItems}<HiIcons.HiOutlineShoppingBag style={{color: 'red'}} /></span>
                 </Link>
             </div>
             <nav className={sidebar ? 'side-menu active' : 'side-menu'}>

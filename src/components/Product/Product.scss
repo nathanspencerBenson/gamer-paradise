@@ -1,6 +1,12 @@
 @import "../../assets/variables.scss";
 
 .product-card {
+  button {
+    z-index: 10;
+  }
+  button:hover {
+    cursor: pointer;
+  }
   position: relative;
   display: flex;
   flex-direction: column;

@@ -6,7 +6,7 @@ import Banner from './Banner/Banner'
 import Carousel from './Carousel/Carousel';
 import BannerTwo from './BannerTwo/BannerTwo';
 
-const Home = ({ categories,handleAddToCart }) => {
+const Home = ({ categories, handleAddToCart }) => {
     return (
         <div className="Home">
             <Banner />

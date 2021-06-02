@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/CheckoutForm/Checkout/Checkout';
 
 function App() {
   const [ products, setProducts ] = useState([]);
@@ -98,13 +99,16 @@ const handleEmptyCart = async () => {
             <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart}/>
           </Route>
           <Route exact path="/cart">
-                    <Cart 
-                    cart={cart} 
-                    handleUpdateCartQty={handleUpdateCartQty}
-                    handleRemoveFromCart={handleRemoveFromCart}
-                    handleEmptyCart={handleEmptyCart}
-                    />
-                </Route>
+            <Cart 
+             cart={cart} 
+              handleUpdateCartQty={handleUpdateCartQty}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleEmptyCart={handleEmptyCart}
+            />
+            </Route>
+            <Route path="/checkout" exact>
+              <Checkout cart={cart} />
+            </Route>
         </Switch>
 
       </div>

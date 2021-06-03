@@ -36,6 +36,7 @@ function Carousel({ title, categories, handleAddToCart, setSelectedProduct}) {
             
         )
     })}
+            
             </AliceCarousel>
             </div>
         </div>

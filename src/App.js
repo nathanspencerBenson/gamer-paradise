@@ -120,7 +120,7 @@ const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
             <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct}/>
           </Route>
           <Route path="/shop/product" exact>
-            <Product selectedProduct={selectedProduct} handleAddToCart={handleAddToCart}  categories={categories} setSelectedProduct={setSelectedProduct} />
+            <Product selectedProduct={selectedProduct} products={products} handleAddToCart={handleAddToCart}  categories={categories} setSelectedProduct={setSelectedProduct} />
           </Route>
           <Route exact path="/cart">
             <Cart 

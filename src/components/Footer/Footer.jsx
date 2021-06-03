@@ -22,10 +22,10 @@ const Footer = () => {
                 <div className="social-media-container">
                     <h1>Connect With Us</h1>
                     <div>
-                        <SocialIcon url="https://facebook.com" />
-                        <SocialIcon url="https://instagram.com" />
-                        <SocialIcon url="https://twitter.com" />
-                        <SocialIcon url="https://youtube.com" />
+                        <SocialIcon url="https://facebook.com" target="_blank" rel="noopener noreferrer"/>
+                        <SocialIcon url="https://instagram.com" target="_blank" rel="noopener noreferrer" />
+                        <SocialIcon url="https://twitter.com" target="_blank" rel="noopener noreferrer" />
+                        <SocialIcon url="https://youtube.com" target="_blank" rel="noopener noreferrer" />
                     </div>
                 </div>
             </div>

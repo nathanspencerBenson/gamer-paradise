@@ -31,7 +31,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
              <h4>Subtotal: { cart.subtotal.formatted_with_symbol}</h4>
              <div>
                  <button onClick={handleEmptyCart}> Empty Cart</button>
-                 <Link to="/checkout"><button className="checkout"> Checkout</button></Link>
+                 <button className="checkout"> <Link to="/checkout">Checkout</Link></button>
              </div>
  
          </div>
@@ -40,10 +40,12 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     }
      if(!cart.line_items) return <div><h1>Your Shopping Cart</h1>  <BeatLoader color={'red'} size={50} /></div>
     return (
-        <div className="shopping-cart">
-            <h1>Your Shopping Cart</h1>
-            <div>
-            {FilledCart()}
+        <div className="shopping-cart-body">
+            <div className="shopping-cart">
+                <h1>Your Shopping Cart</h1>
+                <div>
+                {FilledCart()}
+                </div>
             </div>
         </div>
     )

@@ -21,7 +21,7 @@ const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProd
     
     return (
         <div className="Product-body">
-            <div className="banner" />
+            <div className="banner"> Discount</div>
                     <h3>Categories > {selectedProduct.categories[0].name}</h3>
             <div className="Product">
                 <div className="images-container">
@@ -39,6 +39,7 @@ const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProd
                     </div>
                     <div> 
                         <p><GiIcons.GiPriceTag style={{marginRight: '10px'}}/>RRP: <span className="red">{selectedProduct.price.formatted_with_symbol}</span></p>
+                        <p style={{marginLeft: '25px'}}>Prices incl. VAT excl. shipping costs</p>
                         <p><FaIcons.FaTruck style={{marginRight: '10px'}} /> Delivery in 2 - 4 business days</p>
                         <p><GiIcons.GiTakeMyMoney style={{marginRight: '10px'}} /><span className="green">FREE</span> <span className="underline">Returns</span></p>
                     </div>

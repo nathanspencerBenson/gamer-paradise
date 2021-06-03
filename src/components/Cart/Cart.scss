@@ -1,5 +1,8 @@
 @import "../../assets/variables.scss";
 
+.shopping-cart-body {
+  min-height: 90vh;
+}
 .shopping-cart {
   margin: 20px 0 20px 0;
   border: 5px solid $border-background-color;
@@ -49,7 +52,10 @@
     }
     .checkout {
       background: $secondary-color;
-
+      a {
+        color: white;
+        text-decoration: none;
+      }
       &:hover {
         background: #043843;
       }

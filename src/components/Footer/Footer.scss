@@ -1,0 +1,78 @@
+@import "../../assets/variables.scss";
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  border-top: $border-background-color 2px solid;
+  margin-top: 50px;
+  padding-top: 50px;
+
+  h1 {
+    font-size: 1em;
+  }
+
+  > div:nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    background: $border-background-color;
+    margin-top: 20px;
+    padding: 25px;
+    width: 100vw;
+    a {
+      margin: 0 5px;
+      color: none;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  form {
+    input {
+      height: 50px;
+      margin: 10px 0;
+      padding-left: 10px;
+      font-size: 1.2em;
+      width: 40vw;
+    }
+
+    button {
+      height: 50px;
+      background: $primary-color;
+      color: white;
+      font-weight: bold;
+      padding: 0 30px;
+      border: none;
+      border-radius: 0 10px 10px 0;
+
+      &:hover {
+        background: rgb(150, 2, 2);
+        cursor: pointer;
+      }
+    }
+
+    .email-success {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .social-media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .social-icon {
+      margin: 10px;
+    }
+  }
+}

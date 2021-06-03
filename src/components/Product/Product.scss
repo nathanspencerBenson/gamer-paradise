@@ -1,134 +1,99 @@
 @import "../../assets/variables.scss";
 
-.product-card {
-  button {
-    z-index: 10;
-    background: none;
-    border: none;
+.Product-body {
+  padding: 10vh 0;
+  .Product {
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
-    background: $primary-color;
-    font-weight: bold;
-    width: 80%;
-    align-self: center;
-    padding: 5px 10px;
-    border-radius: 15px;
-  }
-  button:hover {
-    cursor: pointer;
-    font-weight: bold;
-    background: rgb(150, 2, 2);
-  }
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 475px;
-  width: 250px;
-  overflow: hidden;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px 10px;
-  border: 2px solid $border-background-color;
+    width: 90vw;
 
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: none;
-    transform: scale(1.02);
-  }
-  a {
-    text-decoration: none;
-  }
+    .images-container {
+      margin-right: 10%;
 
-  @media (max-width: 1220px) {
-    width: 200px;
-    height: 300px;
-    h2,
-    p,
-    .price {
-      font-size: 0.9em;
-    }
-  }
-  @media (max-width: 620.98px) {
-    height: 250px;
-    width: 174px;
-    h2,
-    p,
-    .price {
-      font-size: 0.7em;
-    }
-  }
+      img {
+        width: 500px;
+        height: 500px;
+      }
 
-  .favouriteIcon {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    color: rgba(65, 65, 65, 0.205);
-    cursor: pointer;
-    font-size: 2em;
-    @media (max-width: 620.98px) {
-      font-size: 1em;
-    }
-  }
-  .favouriteIcon-active {
-    color: red;
-  }
+      .image-menu {
+        display: flex;
+        justify-content: center;
 
-  .img {
-    margin-top: 20px;
-    width: 200px;
-    height: 200px;
-    @media (max-width: 1220px) {
-      width: 150px;
-      height: 150px;
-      border: 2ox solid red;
+        > img {
+          height: 75px;
+          width: 75px;
+          margin: 10px;
+          padding: 5px;
+          border-radius: 10px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+          &:hover {
+            background: $primary-color;
+          }
+        }
+      }
     }
 
-    @media (max-width: 991.98px) {
-      height: 150px;
-      width: 125px;
-    }
-    @media (max-width: 620.98px) {
-      height: 100px;
-      width: 100px;
-    }
-  }
-  h2 {
-    font-size: 1.2em;
-    line-height: 1.3em;
-    min-height: 2.6em;
-    text-align: center;
-    color: #333333;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .price {
-    text-align: center;
-    width: 80%;
-    position: absolute;
-    bottom: 35px;
-  }
+    .description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: fit-content;
+      min-height: 500px;
+      width: 40%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 10px;
+      padding: 30px;
 
-  .description-container {
-    margin: 10px 0;
-    width: 90%;
-    font-size: 0.9em;
-    color: #666666;
-    display: block;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      h1,
+      p {
+        margin-bottom: 10px;
+      }
 
-    strong {
-      color: $secondary-color;
+      .text {
+        & > p {
+          border-bottom: 2px solid $border-background-color;
+        }
+      }
+
+      strong {
+        color: $secondary-color;
+        display: block;
+        border-bottom: 2px solid $border-background-color;
+        padding-bottom: 10px;
+      }
+
+      span {
+        margin: 0;
+      }
+
+      .red {
+        color: #b22705;
+        font-weight: 900;
+        font-size: 1.2em;
+      }
+      .green {
+        color: rgb(60, 168, 60);
+        font-weight: bold;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      button {
+        background: $secondary-color;
+        color: white;
+        border: none;
+        padding: 20px 50px;
+        font-size: 1.5em;
+        font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+          background: $secondary-hover-color;
+        }
+      }
     }
   }
 }

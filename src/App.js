@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
+import Product from './components/Product/Product';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckoutForm/Checkout/Checkout';
 
 function App() {
   const [ products, setProducts ] = useState([]);
+  const [ selectedProduct, setSelectedProduct ] = useState({});
   const [ categories, setCategories ] = useState([]);
   const [ chosenCategory, setChosenCategory ] = useState([]);
   const [ cart, setCart ] = useState([]);
@@ -111,10 +113,13 @@ const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route path="/" exact>
-            <Home categories={categories} products={products} handleAddToCart={handleAddToCart} />
+            <Home categories={categories} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
           </Route>
           <Route path="/shop" exact>
-            <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart}/>
+            <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct}/>
+          </Route>
+          <Route path="/shop/product" exact>
+            <Product selectedProduct={selectedProduct} handleAddToCart={handleAddToCart} />
           </Route>
           <Route exact path="/cart">
             <Cart 

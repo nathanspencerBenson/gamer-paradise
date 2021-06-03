@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Product from '../Product/Product';
+import ProductCard from '../ProductCard/ProductCard';
 import './Shop.scss';
 import BeatLoader from "react-spinners/BeatLoader";
 
-const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart }) => {
+const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart, setSelectedProduct }) => {
 
     const [title, setTitle] = useState()
 
@@ -45,7 +45,7 @@ const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleA
                 <div className="products-container">
                     {chosenCategory.map((item, index) => {
                         return (
-                            <Product item={item} index={index} handleAddToCart={handleAddToCart} />
+                            <ProductCard item={item} index={index} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
                         )
 
                     })}

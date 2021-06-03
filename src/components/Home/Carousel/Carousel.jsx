@@ -7,9 +7,9 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import { commerce } from '../../../lib/commerce';
 import ClimbingBoxLoader from "react-spinners/ClipLoader";
 
-import Product from '../../Product/Product';
+import ProductCard from '../../ProductCard/ProductCard';
 
-function Carousel({ title, categories, handleAddToCart}) {
+function Carousel({ title, categories, handleAddToCart, setSelectedProduct}) {
   
 
     // const carasouelDisplay = <h1>hello</h1>;
@@ -32,7 +32,7 @@ function Carousel({ title, categories, handleAddToCart}) {
             <AliceCarousel mouseTracking controlsStrategy="responsive" autoHeight="auto"  responsive={responsive} className="featured-items-container">
                 { categories[0].productsData.map((item, index) => {
                     return(
-            <Product item={item} index={index} handleAddToCart={handleAddToCart} />
+            <ProductCard item={item} index={index} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
             
         )
     })}

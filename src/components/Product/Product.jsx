@@ -1,36 +1,43 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { FaEuroSign, FaRegHeart } from "react-icons/fa";
-import parse from 'html-react-parser';
+import React, { useState } from 'react';
 import './Product.scss';
-import * as HiIcons from 'react-icons/hi';
 
-const Product = ( {item, index, handleAddToCart} ) => {
-    return (
-        <div className="product-card" key={index}>
-                        <span className="favouriteIcon">
-                        <FaRegHeart />
+import * as FaIcons from 'react-icons/fa';
+import * as GiIcons from 'react-icons/gi';
 
-                        </span>
-            
-                    <div>
-                        <Link to={"/shop"}>
-                        <div className="img" style={{backgroundImage: `url(${item.media.source})`, backgroundRepeat:  `no-repeat`, backgroundPosition: `center`, backgroundSize: 'contain'}}/>
-                        <h2>{item.name}</h2>
-                        </Link>
-                        <div className="description-container">
-                            {parse(item.description)}
-                        </div>
-                        <h2 class="price"><FaEuroSign style={{fontSize: '0.7em'}} />{item.price.formatted_with_symbol}</h2>
-                        
-                    </div>
+import parse from 'html-react-parser';
+
+const Product = ( {selectedProduct, handleAddToCart }) => {
+    const [selectedImage, setSelectedImage] = useState(selectedProduct.assets[0].url);
+
+    const images = selectedProduct.assets.map((image) => (
+        <img src={image.url} onClick={() => setSelectedImage(image.url)} onMouseOver={() => setSelectedImage(image.url)}  />
+    ))
+
+    console.log(selectedProduct)
     
-
-                <button onClick={() => {
-                    handleAddToCart(item.id, 1);
-                    console.log(item.id);
-                }}> <HiIcons.HiOutlineShoppingBag style={{ fontSize: '2em'}} />Add To Bag</button>
+    return (
+        <div className="Product-body">
+            <div className="Product">
+                <div className="images-container">
+                    <img src={selectedImage} alt={selectedProduct.name} />
+                    <div className="image-menu">
+                        {images}
+                    </div>
+                </div>
+                <div className="description">
+                    <div className="text">
+                        <h1>{selectedProduct.name}</h1>
+                        <p>{parse(selectedProduct.description)}</p>
+                    </div>
+                    <div> 
+                        <p><GiIcons.GiPriceTag style={{marginRight: '10px'}}/>RRP: <span className="red">{selectedProduct.price.formatted_with_symbol}</span></p>
+                        <p><FaIcons.FaTruck style={{marginRight: '10px'}} /> Delivery in 2 - 4 business days</p>
+                        <p><GiIcons.GiTakeMyMoney style={{marginRight: '10px'}} /><span className="green">FREE</span> <span className="underline">Returns</span></p>
+                    </div>
+                    <button onClick={() => handleAddToCart(selectedProduct)}>Add To Cart</button>
+                </div>
             </div>
+        </div>
     )
 }
 

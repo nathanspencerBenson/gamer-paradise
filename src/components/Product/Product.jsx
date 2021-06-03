@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Product.scss';
+import Carousel from '../Home/Carousel/Carousel';
 
 import * as FaIcons from 'react-icons/fa';
 import * as GiIcons from 'react-icons/gi';
 
 import parse from 'html-react-parser';
 
-const Product = ( {selectedProduct, handleAddToCart }) => {
+const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProduct }) => {
     const [selectedImage, setSelectedImage] = useState(selectedProduct.assets[0].url);
 
     const images = selectedProduct.assets.map((image) => (
@@ -14,14 +15,21 @@ const Product = ( {selectedProduct, handleAddToCart }) => {
     ))
 
     console.log(selectedProduct)
+    useEffect(() => {
+        setSelectedImage(selectedProduct.assets[0].url)
+    }, [selectedProduct])
     
     return (
         <div className="Product-body">
+            <div className="banner" />
+                    <h3>Categories > {selectedProduct.categories[0].name}</h3>
             <div className="Product">
                 <div className="images-container">
-                    <img src={selectedImage} alt={selectedProduct.name} />
                     <div className="image-menu">
                         {images}
+                    </div>
+                    <div className="main-image">
+                        <img src={selectedImage} alt={selectedProduct.name} />
                     </div>
                 </div>
                 <div className="description">
@@ -37,6 +45,7 @@ const Product = ( {selectedProduct, handleAddToCart }) => {
                     <button onClick={() => handleAddToCart(selectedProduct)}>Add To Cart</button>
                 </div>
             </div>
+            <Carousel title={"More Items To Explore"} categories={categories} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
         </div>
     )
 }

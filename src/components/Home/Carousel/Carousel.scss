@@ -13,6 +13,8 @@
   border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   h1 {
     align-self: flex-start;
     margin-top: 10px;
@@ -20,9 +22,6 @@
   }
 }
 
-.alice-carousel {
-  padding-left: 60px;
-}
 .alice-carousel__dots {
   height: fit-content;
 }
@@ -31,9 +30,24 @@
   font-weight: 900;
   font-size: 60px;
   z-index: 20;
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  color: red;
+  text-align: center;
 }
 
 .alice-carousel__next-btn-item {
   font-size: 60px;
   font-weight: 900;
+  z-index: 20;
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  color: red;
+}
+
+.alice-carousel__next-btn-item.__inactive,
+.alice-carousel__prev-btn-item.__inactive {
+  color: red;
 }

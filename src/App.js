@@ -15,9 +15,11 @@ function App() {
   const [ selectedProduct, setSelectedProduct ] = useState({});
   const [ categories, setCategories ] = useState([]);
   const [ chosenCategory, setChosenCategory ] = useState([]);
+  const [title, setTitle] = useState('All Products');
   const [ cart, setCart ] = useState([]);
   const [ order, setOrder ] = useState({});
   const [ errorMessage, setErrorMessage] = useState('');
+
 
   const fetchProducts = async () => {
         const { data: products } = await commerce.products.list();
@@ -111,16 +113,16 @@ const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
   return (
     <Router>
       <div className="App">
-        <Navbar totalItems={cart.total_items} />
+        <Navbar totalItems={cart.total_items} setTitle={setTitle} setChosenCategory={setChosenCategory} products={products} />
         <Switch>
           <Route path="/" exact>
             <Home categories={categories} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
           </Route>
           <Route path="/shop" exact>
-            <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct}/>
+            <Shop categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} setTitle={setTitle} title={title} products={products} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct}/>
           </Route>
           <Route path="/shop/product" exact>
-            <Product selectedProduct={selectedProduct} products={products} handleAddToCart={handleAddToCart}  categories={categories} setSelectedProduct={setSelectedProduct} />
+            <Product selectedProduct={selectedProduct} products={products} handleAddToCart={handleAddToCart}  categories={categories} chosenCategory={chosenCategory} setChosenCategory={setChosenCategory} setSelectedProduct={setSelectedProduct} setTitle={setTitle} />
           </Route>
           <Route exact path="/cart">
             <Cart 

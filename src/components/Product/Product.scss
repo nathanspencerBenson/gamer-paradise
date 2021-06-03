@@ -27,10 +27,18 @@
     }
   }
 
-  h3 {
-    width: 100%;
-    padding-left: 20px;
+  .category-links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 90vw;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
+
   .Product {
     padding: 10vh 0;
     display: flex;

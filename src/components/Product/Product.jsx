@@ -4,10 +4,12 @@ import Carousel from '../Home/Carousel/Carousel';
 
 import * as FaIcons from 'react-icons/fa';
 import * as GiIcons from 'react-icons/gi';
+import { IoIosArrowForward } from 'react-icons/io'
 
 import parse from 'html-react-parser';
+import { Link } from 'react-router-dom';
 
-const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProduct, products }) => {
+const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProduct, products, chosenCategory, setChosenCategory, setTitle }) => {
     const [selectedImage, setSelectedImage] = useState(selectedProduct.assets[0].url);
 
     const images = selectedProduct.assets.map((image) => (
@@ -18,14 +20,32 @@ const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProd
     useEffect(() => {
         setSelectedImage(selectedProduct.assets[0].url)
     }, [selectedProduct])
+
     
-    console.log(products)
+
     return (
         <div className="Product-body">
             <div className="banner">
                 <p>Follow us on <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaIcons.FaInstagram style={{margin: '0 2px 0 5px'}} />Instagram</a> and be in for a chance to win a <span>PS5</span></p>
             </div>
-                    <h3>Categories > {selectedProduct.categories[0].name}</h3>
+            <div className="category-links">
+                <Link to="/shop" onClick={() => {
+                    setChosenCategory(products);
+                    setTitle('All Products');
+                }}>
+                <h3>Categories</h3>
+                </Link> 
+                <IoIosArrowForward style={{margin: 0, fontSize: '1.5em'}} />
+                <Link to="/shop" onClick={() => {
+                    const obj = categories.find(obj => obj.name == selectedProduct.categories[0].name);
+                    setChosenCategory(obj.productsData);
+                    setTitle(obj.name);
+                }}>
+                <h3 style={{margin: 0}}>{selectedProduct.categories[0].name}</h3>
+                </Link>
+             </div>
+            
+                    
             <div className="Product">
                 <div className="images-container">
                     <div className="image-menu">

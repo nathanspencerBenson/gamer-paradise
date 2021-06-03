@@ -9,20 +9,22 @@ import { IconContext } from 'react-icons';
 import emptyChest from "../../assets/empty-chest.png";
 
 
-function Navbar({ totalItems }) {
+function Navbar({ totalItems, setTitle, setChosenCategory, products }) {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
 
     const navItems = SidebarData.map((item, index) => {
         return (
             <li key={index} className={item.cName}>
-                <Link to={item.path}>
+                <Link to={item.path} onClick={() => {setTitle('All Products'); setChosenCategory(products)}}>
                     {item.icon}
                     <span>{item.title}</span>
                 </Link>
             </li>
         )
     })
+
+
 
     return (
         <>

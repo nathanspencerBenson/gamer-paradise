@@ -3,15 +3,8 @@ import ProductCard from '../ProductCard/ProductCard';
 import './Shop.scss';
 import BeatLoader from "react-spinners/BeatLoader";
 
-const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart, setSelectedProduct }) => {
+const Shop = ({ categories, chosenCategory, setChosenCategory, products, handleAddToCart, setSelectedProduct, setTitle, title }) => {
 
-    const [title, setTitle] = useState()
-
-
-    useEffect(() => {
-        setTitle('All Products')
-        setChosenCategory(products)
-    }, [])
 
     if (categories.length === 0) return (
         <div className="loading-container">

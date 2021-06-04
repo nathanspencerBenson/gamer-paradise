@@ -15,10 +15,10 @@ function Carousel({ title, categories, handleAddToCart, setSelectedProduct}) {
     // const carasouelDisplay = <h1>hello</h1>;
 
     const responsive = {
-        0: { items: 0 },
-        150: { items: 2 },
-       768: { items: 3 },
-        1024: { items: 4 },
+        520: { items: 1 },
+        630: { items: 2},
+       1024: { items: 3 },
+        1200: { items: 4 },
     };
     
     if (categories.length === 0) {

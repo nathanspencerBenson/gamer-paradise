@@ -8,6 +8,10 @@
   margin-top: 50px;
   padding-top: 50px;
 
+  @media screen and (max-width: 720px) {
+    font-size: 0.7em;
+  }
+
   h1 {
     font-size: 1em;
   }
@@ -37,12 +41,19 @@
   }
 
   form {
+    @media screen and (max-width: 920px) {
+      margin-left: 20px;
+    }
     input {
       height: 50px;
       margin: 10px 0;
       padding-left: 10px;
       font-size: 1.2em;
       width: 40vw;
+
+      @media screen and (max-width: 720px) {
+        width: 30vw;
+      }
     }
 
     button {

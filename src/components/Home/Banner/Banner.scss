@@ -13,6 +13,10 @@
     height: 30vh;
     font-size: 0.6em;
   }
+  @media (max-width: 600px) {
+    height: 30vh;
+    font-size: 0.5em;
+  }
 
   .text-container {
     width: 30%;
@@ -43,6 +47,10 @@
     .shop-now-button {
       display: flex;
       justify-content: center;
+
+      @media (max-width: 780px) {
+        margin-top: -30px;
+      }
     }
 
     a {

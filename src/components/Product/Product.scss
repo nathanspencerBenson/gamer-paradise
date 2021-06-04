@@ -99,6 +99,16 @@
       .text {
         & > p {
           border-bottom: 2px solid $border-background-color;
+          & > p {
+            display: none;
+          }
+          & > p:nth-child(3),
+          p:nth-child(1) {
+            display: block;
+          }
+          & > p:nth-child(3) {
+            padding: 20px 0;
+          }
         }
       }
 
@@ -140,6 +150,21 @@
           background: $secondary-hover-color;
         }
       }
+    }
+  }
+
+  .product-description {
+    width: 90vw;
+    border-top: 2px solid $border-background-color;
+    border-bottom: 2px solid $border-background-color;
+    padding: 20px 0;
+
+    h2 {
+      color: $primary-color;
+    }
+    p {
+      width: 80vw;
+      margin: 10px;
     }
   }
 }

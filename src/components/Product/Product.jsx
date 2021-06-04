@@ -26,7 +26,7 @@ const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProd
     return (
         <div className="Product-body">
             <div className="banner">
-                <p>Follow us on <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaIcons.FaInstagram style={{margin: '0 2px 0 5px'}} />Instagram</a> and be in for a chance to win a <span>PS5</span></p>
+                <p>Follow us on <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> and be in for a chance to win a <span>PS5</span></p>
             </div>
             <div className="category-links">
                 <Link to="/shop" onClick={() => {
@@ -69,6 +69,9 @@ const Product = ( {selectedProduct, handleAddToCart, categories, setSelectedProd
                     <button onClick={() => handleAddToCart(selectedProduct)}>Add To Cart</button>
                 </div>
             </div>
+            <div className="product-description">
+                <h2>Product Description</h2>
+                {parse(selectedProduct.description)}</div>
             <Carousel title={"More Items To Explore"} categories={categories} handleAddToCart={handleAddToCart} setSelectedProduct={setSelectedProduct} />
         </div>
     )

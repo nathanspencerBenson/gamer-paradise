@@ -3,10 +3,12 @@
 .Footer {
   display: flex;
   flex-direction: column;
+
   width: 100vw;
   border-top: $border-background-color 2px solid;
   margin-top: 50px;
   padding-top: 50px;
+  padding: 50px 10px 0 10px;
 
   @media screen and (max-width: 720px) {
     font-size: 0.7em;
@@ -82,6 +84,18 @@
     flex-direction: column;
     align-items: center;
 
+    margin: 0 auto;
+
+    h1 {
+      text-align: center;
+    }
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
     .social-icon {
       margin: 10px;
     }

@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Gamer Paradise - e-commerce store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An e-commerce store built using [React](https://reactjs.org/), [Commerce.js](https://commercejs.com/) and [Stripe](https://stripe.com/en-de).
 
-## Available Scripts
+## Objectives
 
-In the project directory, you can run:
+The  main goal was to create an e-commerce store using React.
 
-### `npm start`
+## Process
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Originally, I hard coded the product data but I soon realise that this wouldn't be very practical for a client, so I searched for alternative options that would allow a potential client to upload products without having programming knowledge.
+That's when I discovered [Commerce.js](https://commercejs.com/),  a headless commerce backend and API. 
+Since this was my first time integrating a headless commerce backend into a project there was definitely a learning curve but I thoroughly enjoyed learning something so powerful.
+I also decided to use [Stripe](https://stripe.com/en-de) to handle payments. I'd never used Stripe before I learnt alot using it in conjunction with commerce.js.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [React](https://reactjs.org/)
+* [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
+* [Commerce.js](https://commercejs.com/) 
+* [Stripe](https://stripe.com/en-de)
+* SCSS
+* [Material/ui](https://material-ui.com/)
+* [Alice-Carousel](https://www.npmjs.com/package/react-alice-carousel)
+* 
 
-### `npm run build`
+## Final Thoughts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This was my first time building a full scale application, I'm impressed with how far I've come and I enjoyed harnessing the power of **REACT**
+While building this project there was one issue I noticed, **Props drilling**. While it wasn't too much of an issue in such a small app, I've definitely realised how it could become a problem in bigger apps.
+So while building this website, I#ve discovered my next goal.
+Learn [Redux](https://redux.js.org/).
